@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineChartView">
+        <attr name="lineColorOnAxis" format="color" />
+        <attr name="lineSizeOnAxis" format="dimension" />
+        <attr name="textColorOnAxis" format="color" />
+        <attr name="textSizeOnAxis" format="dimension" />
+        <attr name="linColorOnCoord" format="color" />
+        <attr name="lineSizeOnCoord" format="dimension" />
+        <attr name="bgColor" format="color" />
+    </declare-styleable>
+</resources>
