@@ -5,9 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import xzh.com.listviewhover.R;
 import xzh.com.listviewhover.model.AdverNotice;
 import xzh.com.listviewhover.view.AdverView;
@@ -36,11 +37,11 @@ public class AdverViewAdapter {
     }
 
     public void setItem(final View view, final AdverNotice data) {
-        TextView tv = (TextView) view.findViewById(R.id.title);
-        tv.setText(data.title);
 
-        TextView tag = (TextView) view.findViewById(R.id.tag);
-        tag.setText(data.url);
+        ViewHolder viewHolder = null;
+        viewHolder = new ViewHolder(view);
+        viewHolder.title.setText(data.title);
+        viewHolder.tag.setText(data.url);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,5 +49,18 @@ public class AdverViewAdapter {
                 Toast.makeText(view.getContext(), data.url, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+   static   class ViewHolder {
+       @InjectView(R.id.tag)
+       TextView tag;
+       @InjectView(R.id.title)
+       TextView title;
+
+        ViewHolder(View view) {
+            ButterKnife.inject(this, view);
+            view.setTag(this);
+        }
+
     }
 }

@@ -18,9 +18,6 @@ import android.widget.LinearLayout;
 import xzh.com.listviewhover.R;
 import xzh.com.listviewhover.adapter.AdverViewAdapter;
 
-/**
- * Created by zengyu on 2016/3/20.
- */
 public class AdverView extends LinearLayout {
     //控件高度
     private float mAdverHeight = 0f;
@@ -31,7 +28,7 @@ public class AdverView extends LinearLayout {
     //显示文字的尺寸
     private final float TEXTSIZE = 20f;
     private AdverViewAdapter mAdapter;
-    private final float jdAdverHeight = 50;
+    private final float AdverHeight = 50;
     //显示的view
     private View mFirstView;
     private View mSecondView;
@@ -55,19 +52,11 @@ public class AdverView extends LinearLayout {
         init(context, attrs, defStyleAttr);
     }
 
-    /**
-     * 初始化属性
-     * @param context
-     * @param attrs
-     * @param defStyleAttr
-     */
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
-        //设置为垂直方向
         setOrientation(VERTICAL);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        //获取自定义属性
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.adver_view);
-        mAdverHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, jdAdverHeight, getResources().getDisplayMetrics());
+        mAdverHeight = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, AdverHeight, getResources().getDisplayMetrics());
         int gap = array.getInteger(R.styleable.adver_view_gap, mGap);
         int animDuration = array.getInteger(R.styleable.adver_view_animDuration, mAnimDuration);
 

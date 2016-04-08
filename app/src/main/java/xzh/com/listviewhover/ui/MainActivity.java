@@ -37,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView likeCount;
     @InjectView(R.id.adver)
     AdverView adver;
+    @InjectView(R.id.webview_button)
+    Button webviewButton;
+    @InjectView(R.id.level_button)
+    Button levelButton;
 
 
     private List<AdverNotice> datas = new ArrayList<AdverNotice>();
@@ -51,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initAdver() {
-        datas.add(new AdverNotice("瑞士维氏军刀 新品满200-50","最新"));
-        datas.add(new AdverNotice("家居家装焕新季，讲199减100！","最火爆"));
-        datas.add(new AdverNotice("带上相机去春游，尼康低至477","HOT"));
-        datas.add(new AdverNotice("价格惊呆！电信千兆光纤上市","new"));
+        datas.add(new AdverNotice("瑞士维氏军刀 新品满200-50", "最新"));
+        datas.add(new AdverNotice("家居家装焕新季，讲199减100！", "最火爆"));
+        datas.add(new AdverNotice("带上相机去春游，尼康低至477", "HOT"));
+        datas.add(new AdverNotice("价格惊呆！电信千兆光纤上市", "new"));
         AdverViewAdapter adapter = new AdverViewAdapter(datas);
         adver.setAdapter(adapter);
         adver.start();
@@ -80,18 +84,30 @@ public class MainActivity extends AppCompatActivity {
         like();
     }
 
+    @OnClick(R.id.webview_button)
+    void webClick(View view) {
+       String url="http://sellerhub.ymatou.com/m/sellerhub/index.html";
+        String title="sellerhub";
+        WebViewActivty.open(this,title,url);
+    }
+
+    @OnClick(R.id.level_button)
+    void caterClick(View view) {
+        CatergoryActivity.open(this);
+    }
+
     private void like() {
-        LikeEntity entity=new LikeEntity();
-        entity.liked=false;
-        entity.count=99;
+        LikeEntity entity = new LikeEntity();
+        entity.liked = false;
+        entity.count = 99;
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_scale);
         if (entity.liked) {
-            entity.liked=false;
-            entity.count=entity.count - 1;
+            entity.liked = false;
+            entity.count = entity.count - 1;
             likeCount.setImageResource(R.drawable.ic_thumb_up_gray_18dp);
         } else {
-            entity.liked=true;
-            entity.count=entity.count + 1;
+            entity.liked = true;
+            entity.count = entity.count + 1;
             likeCount.setImageResource(R.drawable.ic_thumb_up_red_18dp);
         }
         likeCount.startAnimation(animation);

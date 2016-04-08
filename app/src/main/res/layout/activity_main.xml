@@ -31,13 +31,25 @@
         android:textColor="@color/color_c12"
         android:textSize="18sp" />
 
-        <xzh.com.listviewhover.view.StarView
-           android:id="@+id/starview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            />
+
+    <Button
+        android:id="@+id/webview_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/color_c23"
+        android:text="WebView测试"
+        android:textColor="@color/color_c12"
+        android:textSize="18sp" />
+
+    <xzh.com.listviewhover.view.StarView
+        android:id="@+id/starview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:id="@+id/date_picker"
@@ -45,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:text="时间选择器"/>
+        android:text="时间选择器" />
 
     <ImageView
         android:id="@+id/like_count"
@@ -57,41 +69,57 @@
         android:src="@drawable/ic_thumb_up_gray_18dp" />
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerInParent="true"
-        android:padding="5dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
 
 
         <TextView
-            android:paddingLeft="5dp"
-            android:textStyle="bold"
-            android:text="快报"
-            android:textColor="#ffffff"
-            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ff0000"
-            android:textSize="18sp"/>
+            android:padding="5dp"
+            android:paddingLeft="5dp"
+            android:text="快报"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <View
             android:layout_width="1dp"
-            android:layout_height="50dp"
-            android:background="#e0e0e0"
+            android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            />
+            android:background="#e0e0e0" />
+
         <xzh.com.listviewhover.view.AdverView
             android:id="@+id/adver"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             app:animDuration="900"
-            app:gap="2000"/>
-
+            app:gap="2000" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/level_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/color_c23"
+        android:text="仿京东三级菜单测试"
+        android:textColor="@color/color_c12"
+        android:textSize="18sp" />
+
+
+
 
 </LinearLayout>
